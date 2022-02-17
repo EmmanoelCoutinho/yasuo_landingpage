@@ -8,9 +8,16 @@ const GlobalStyle = createGlobalStyle`
     ovelflow: hidden;
   }
 
+  html{
+    height: fit-content;
+  }
 
   a{
     text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
 

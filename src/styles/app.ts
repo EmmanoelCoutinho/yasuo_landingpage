@@ -7,9 +7,15 @@ export const Container = styled.div`
   align-items: center;
 
   width: 100vw;
-  height: 100vh;
+  height: 100vh !important;
 
-  background-color: #000;
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) -120%,
+      rgba(0, 0, 0, 0.8) 0%
+    ),
+    url("/images/background.png");
+  background-size: cover;
 
   // padding: 2rem;
 
@@ -22,21 +28,21 @@ export const MainContainer = styled.div`
 
   width: 100%;
   max-width: 1024px;
-  height: 100vh;
+  height: 100vh !important;
 
   background: linear-gradient(black, #f19668); //f19668
 
-  overflow: hidden !important;
-
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     background: linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.4) 0%,
-        rgba(0, 0, 0, 1) 150%
+        rgba(0, 0, 0, 1) -120%,
+        rgba(0, 0, 0, 0.8) 0%
       ),
       url("/images/background.png");
     background-size: cover;
   }
+
+  overflow: hidden !important;
 `;
 
 export const Header = styled.div`
@@ -67,7 +73,6 @@ export const Header = styled.div`
 
 export const Main = styled.div`
   display: flex;
-  flex-direction: column;
 
   width: 100%;
   height: fit-content;
@@ -95,7 +100,9 @@ export const Main = styled.div`
     p {
       font-size: 1.2rem;
       width: 80%;
+      max-width: 280px;
       margin: 1rem 0 2rem;
+      line-height: 1.2;
     }
 
     .buttons {
@@ -108,24 +115,67 @@ export const Main = styled.div`
       button {
         width: 135px;
         height: 56px;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      .play_now {
+        transform: skewX(-10deg);
+        background: linear-gradient(orange, #f19668);
+        border: none;
+
+        &:hover {
+          background: linear-gradient(#f19668, black);
+        }
+
+        @media (min-width: 768px) {
+          background: linear-gradient(red, #f19668);
+        }
+      }
+
+      .login {
+        border: 2px solid #fff;
+        background-color: inherit;
+
+        :hover {
+          background-color: orange;
+        }
+      }
+
+      @media (min-width: 500px) {
+        width: fit-content;
+        gap: 1rem;
       }
     }
   }
 
   .right_content {
-    img {
-      position: absolute;
-      bottom: 0;
-      right: 50%;
-      transform: translateX(50%);
+    display: flex;
+    aling-items: center;
+    justify-content: center;
 
-      max-width: 120vw;
+    // background-color: red;
+
+    width: 100vw;
+
+    img {
+      position: fixed;
+      bottom: 0;
+
+      max-width: 130%;
       width: auto;
-      max-height: 666px;
+      max-height: 30rem;
       height: auto;
     }
 
-    @media (min-width: 1024px) {
-      display: none;
+    @media (min-width: 768px) {
+      img {
+        // display: none;
+        position: inherit;
+        margin-left: 110px;
+        margin-top: 250px;
+      }
+    }
   }
 `;
