@@ -1,4 +1,4 @@
-import { Container, MainContainer, Header, Main } from "./styled/app";
+import { Container, MainContainer, Header, Main } from "./styles/app";
 
 function App() {
   return (
