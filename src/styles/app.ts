@@ -171,10 +171,7 @@ export const Main = styled.div`
 
     @media (min-width: 768px) {
       img {
-        // display: none;
-        position: inherit;
-        margin-left: 110px;
-        margin-top: 250px;
+        display: none;
       }
     }
   }
